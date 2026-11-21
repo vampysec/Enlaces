@@ -19,13 +19,11 @@
   .avatar {
     width: 96px; height: 96px; margin: 0 auto 14px;
     border-radius: 50%;
-    background: radial-gradient(circle at 35% 30%, #ffe27a, #f5c542 55%, #b8860b);
-    color: #0a0a0f;
-    font-size: 52px; font-weight: 900;
-    display: flex; align-items: center; justify-content: center;
     border: 3px solid #00e5a0;
     box-shadow: 0 0 28px rgba(245, 197, 66, .35);
+    overflow: hidden;
   }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
   h1 { font-size: 30px; color: #f5c542; letter-spacing: 1px; }
   .sub { color: #00e5a0; font-weight: 700; margin-top: 4px; font-size: 16px; }
   .tagline { color: #9a9aab; font-size: 14px; margin-top: 6px; font-style: italic; }
@@ -72,7 +70,7 @@
 <div class="wrap">
 
   <header>
-    <div class="avatar">V</div>
+    <div class="avatar"><img src="data:image/webp;base64,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" alt="VampySec"></div>
     <h1>VampySec</h1>
     <div class="sub">Hacker Ético MX</div>
     <div class="tagline">Haciendo Magia Como Siempre</div>
